@@ -1,5 +1,7 @@
 print("**********************************************************")
-print(" Listen me. I need you to cooperate with me, let's play?")
+print(" Listen me. I want to play a game")
+print(" You need choice between the numbers 0 and 100")
+print(" Live or die, make your choice")
 print("**********************************************************")
 
 secret_number = 42
@@ -10,3 +12,5 @@ if(user_input == secret_number):
     print("Congratz... You are the winner!")
 else:
     print("HAHAHAHA... You lose!!!")
+
+print("End game!")
