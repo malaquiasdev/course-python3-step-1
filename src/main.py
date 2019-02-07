@@ -7,7 +7,17 @@ print(" Make your choice !!!")
 print("**********************************************************")
 
 secret_number = random.randrange(1, 101)
-attempts_total = 3
+attempts_total = 0
+
+print("Select a difficulty level for your match")
+match_level = int(input("(1) Easy, (2) Medium, (3) Hard"))
+
+if(match_level == 1):
+    attempts_total = 20
+elif(match_level == 2):
+    attempts_total = 10
+else:
+    attempts_total = 5
 
 for attempt in range(1, attempts_total + 1):
     print(f"Attempt {attempt} of {attempts_total}")
