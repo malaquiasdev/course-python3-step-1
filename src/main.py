@@ -11,7 +11,7 @@ attempts_total = 0
 user_points = 1000
 
 print("Select a difficulty level for your match")
-match_level = int(input("(1) Easy, (2) Medium, (3) Hard"))
+match_level = int(input("(1) Easy, (2) Medium, (3) Hard: "))
 
 if(match_level == 1):
     attempts_total = 20
