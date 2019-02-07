@@ -1,10 +1,12 @@
+import random
+
 print("**********************************************************")
 print(" Listen me. I want to play a game")
 print(" You need choice between the numbers 0 and 100")
 print(" Make your choice !!!")
 print("**********************************************************")
 
-secret_number = 42
+secret_number = random.randrange(1, 101)
 attempts_total = 3
 
 for attempt in range(1, attempts_total + 1):
