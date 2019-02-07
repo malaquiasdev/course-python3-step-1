@@ -8,7 +8,7 @@ secret_number = 42
 attempts_total = 3
 
 for attempt in range(1, attempts_total + 1):
-    print("Attempt {} of {}".format(attempt, attempts_total))
+    print(f"Attempt {attempt} of {attempts_total}")
 
     user_input = int(input("Digit a number: "))
 
