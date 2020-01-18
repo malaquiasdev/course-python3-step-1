@@ -1,11 +1,60 @@
 import random
 
 
+def show_welcome_message():
+    print("**********************************************************")
+    print(" Welcome to the Hangman Game u.u ")
+    print("**********************************************************")
+
+
+def show_winner_message():
+    print("**********************************************************")
+    print("You are the WINNER !!! \o/")
+    print("**********************************************************")
+    print("       ___________      ")
+    print("      '._==_==_=_.'     ")
+    print("      .-\\:      /-.    ")
+    print("     | (|:.     |) |    ")
+    print("      '-|:.     |-'     ")
+    print("        \\::.    /      ")
+    print("         '::. .'        ")
+    print("           ) (          ")
+    print("         _.' '._        ")
+    print("        '-------'       ")
+
+
+def show_loser_message(secret_word):
+    print("**********************************************************")
+    print(" You lose! T.T ")
+    print("**********************************************************")
+    print(f'The secret word was: {secret_word}')
+    print("    _______________         ")
+    print("   /               \       ")
+    print("  /                 \      ")
+    print("//                   \/\  ")
+    print("\|   XXXX     XXXX   | /   ")
+    print(" |   XXXX     XXXX   |/     ")
+    print(" |   XXX       XXX   |      ")
+    print(" |                   |      ")
+    print(" \__      XXX      __/     ")
+    print("   |\     XXX     /|       ")
+    print("   | |           | |        ")
+    print("   | I I I I I I I |        ")
+    print("   |  I I I I I I  |        ")
+    print("   \_             _/       ")
+    print("     \_         _/         ")
+    print("       \_______/           ")
+
+
 def get_hangman_game_secret_word_list():
     file = open('src/hangman_game_secret_word_list.txt', 'r')
     secret_words = [line.lower().strip() for line in file]
     file.close()
     return secret_words
+
+
+def get_hit_letters_mask(secret_word):
+    return ["_" for letter in secret_word]
 
 
 def get_secret_word():
@@ -46,23 +95,14 @@ def game_loop(secret_word, hit_letters_mask):
 
 
 def play():
-    print("**********************************************************")
-    print(" Welcome to the Hangman Game u.u ")
-    print("**********************************************************")
-
+    show_welcome_message()
     secret_word = get_secret_word()
-    hit_letters_mask = ["_" for letter in secret_word]
-
+    hit_letters_mask = get_hit_letters_mask(secret_word)
     result = game_loop(secret_word, hit_letters_mask)
-
     if have_we_a_winner(result['hit_letters_mask']):
-        print("**********************************************************")
-        print("You are the WINNER !!! \o/")
-        print("**********************************************************")
+        show_winner_message()
     else:
-        print("**********************************************************")
-        print(" You lose! T.T ")
-        print("**********************************************************")
+        show_loser_message(secret_word)
 
 
 if (__name__ == "__main__"):
