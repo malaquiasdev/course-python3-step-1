@@ -24,6 +24,7 @@ def game_loop(secret_word, user_hit_letters):
         else:
             number_of_errors += 1
         print(user_hit_letters)
+    return {'number_of_errors': number_of_errors, 'user_hit_letters': user_hit_letters}
 
 
 def play():
@@ -34,11 +35,16 @@ def play():
     secret_word = "banana".lower().strip()
     user_hit_letters = ["_", "_", "_", "_", "_", "_"]
 
-    game_loop(secret_word, user_hit_letters)
+    result = game_loop(secret_word, user_hit_letters)
 
-    print("**********************************************************")
-    print(" You lose! T.T ")
-    print("**********************************************************")
+    if have_we_a_winner(result['user_hit_letters']):
+        print("**********************************************************")
+        print("You are the WINNER !!! \o/")
+        print("**********************************************************")
+    else:
+        print("**********************************************************")
+        print(" You lose! T.T ")
+        print("**********************************************************")
 
 
 if (__name__ == "__main__"):
