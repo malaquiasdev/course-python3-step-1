@@ -2,8 +2,8 @@ def user_input_is_equal_to_letter(user_input, letter):
     return user_input == letter
 
 
-def is_the_user_hanged(number_of_errors):
-    return number_of_errors == 6
+def is_the_user_hanged(number_of_errors, limit_of_attempts):
+    return number_of_errors == limit_of_attempts
 
 
 def have_we_a_winner(user_hit_letters):
@@ -11,9 +11,10 @@ def have_we_a_winner(user_hit_letters):
 
 
 def game_loop(secret_word, user_hit_letters):
+    limit_of_attempts = 6
     number_of_errors = 0
     print(f'Hit letters {user_hit_letters}')
-    while not have_we_a_winner(user_hit_letters) and not is_the_user_hanged(number_of_errors):
+    while not have_we_a_winner(user_hit_letters) and not is_the_user_hanged(number_of_errors, limit_of_attempts):
         user_input = input(" Tell me a letter, please? ").lower().strip()
         index = 0
         if user_input in secret_word:
@@ -23,6 +24,7 @@ def game_loop(secret_word, user_hit_letters):
                 index += 1
         else:
             number_of_errors += 1
+            print(f'Oops, you missed! There are {limit_of_attempts - number_of_errors} attempts left.')
         print(user_hit_letters)
     return {'number_of_errors': number_of_errors, 'user_hit_letters': user_hit_letters}
 
