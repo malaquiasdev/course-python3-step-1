@@ -35,7 +35,7 @@ def play():
     print("**********************************************************")
 
     secret_word = "banana".lower().strip()
-    user_hit_letters = ["_", "_", "_", "_", "_", "_"]
+    user_hit_letters = ["_" for letter in secret_word]
 
     result = game_loop(secret_word, user_hit_letters)
 
