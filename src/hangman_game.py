@@ -6,11 +6,14 @@ def is_the_user_hanged(number_of_errors):
     return number_of_errors == 6
 
 
+def have_we_a_winner(user_hit_letters):
+    return "_" not in user_hit_letters
+
+
 def game_loop(secret_word, user_hit_letters):
-    win = False
     number_of_errors = 0
     print(f'Hit letters {user_hit_letters}')
-    while not win and not is_the_user_hanged(number_of_errors):
+    while not have_we_a_winner(user_hit_letters) and not is_the_user_hanged(number_of_errors):
         user_input = input(" Tell me a letter, please? ").lower().strip()
         index = 0
         if user_input in secret_word:
