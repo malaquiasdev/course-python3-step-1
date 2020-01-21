@@ -48,7 +48,3 @@ def play():
             user_points = user_points - lost_points
 
     print("End game!")
-
-
-if(__name__ == "__main__"):
-    play()

@@ -1,6 +1,5 @@
-import enigma
-import hangman_game
-
+from src import enigma
+from src import hangman_game
 
 def choose_game():
     print("*********************************")

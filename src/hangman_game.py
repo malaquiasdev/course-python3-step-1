@@ -104,6 +104,3 @@ def play():
     else:
         show_loser_message(secret_word)
 
-
-if (__name__ == "__main__"):
-    play()
